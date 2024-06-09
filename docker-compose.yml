@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  eureka-server:
+    build:
+      dockerfile: Dockerfile
+    container_name: eureka-server-container
+    ports:
+      - "8762:8762"
+    environment:
+      - SPRING_APPLICATION_NAME=service-Registry
+      - SERVER_PORT=8762
+      - EUREKA_INSTANCE_HOSTNAME=eureka-server
+      - EUREKA_CLIENT_FETCH_REGISTRY=false
+      - EUREKA_CLIENT_REGISTER_WITH_EUREKA=false
